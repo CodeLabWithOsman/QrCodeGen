@@ -36,7 +36,7 @@
 <ol>
   <li>Clone this repository:</li>
   <pre><code>git clone https://github.com/your-username/QrCodeGen
-cd qr-code-generator</code></pre>
+cd QrCodeGen</code></pre>
 
   <li>Run the script:</li>
   <pre><code>python qr_generator.py</code></pre>
