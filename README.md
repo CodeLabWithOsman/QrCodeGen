@@ -35,7 +35,7 @@
 
 <ol>
   <li>Clone this repository:</li>
-  <pre><code>git clone https://github.com/your-username/QrCodeGen
+  <pre><code>git clone https://github.com/codelabwithosman/QrCodeGen
 cd QrCodeGen</code></pre>
 
   <li>Run the script:</li>
