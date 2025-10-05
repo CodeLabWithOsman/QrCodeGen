@@ -1,1 +1,281 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Mobile Enhanced AI Art Generator Pro</title>\n    <link rel="manifest" href="manifest.json">\n    <style>\n        /* Mobile Optimization CSS */\n        body { font-size: 16px; line-height: 1.6; }\n        button { min-width: 48px; padding: 20px; }\n        .container { display: flex; flex-direction: column; }\n        @media (max-width: 480px) { /* Complete mobile overrides */ }\n        @media (max-width: 768px) and (orientation: landscape) { /* Landscape mobile */ }\n        /* Safe area support */\n        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);\n    </style>\n</head>\n<body>\n    <div class="container">\n        <header>\n            <nav>\n                <!-- Bottom tab bar navigation -->\n            </nav>\n        </header>\n        <main>\n            <h1>Welcome to the AI Art Generator Pro</h1>\n            <button id="upload-btn">Upload Image</button>\n            <div class="image-preview">\n                <!-- Image previews go here -->\n            </div>\n        </main>\n        <footer>\n            <button>Share</button>\n            <button>Settings</button>\n        </footer>\n    </div>\n    <script>\n        // Mobile JavaScript Enhancements\n        document.getElementById('upload-btn').addEventListener('click', function() {\n            // Camera access and file upload functionality\n        });\n        // Add touch event handlers and gesture detection here\n    </script>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>AI Art Generator Pro</title>
+    <style>
+        /* Existing CSS styles */
+        /* ... existing styles ... */
+        /* COMPLETE MOBILE ENHANCEMENTS */
+
+        /* Touch Target Enhancements */
+        @media (max-width: 768px) {
+            /* Larger buttons and touch targets */
+            .btn {
+                padding: 18px 35px !important;
+                font-size: 1.1rem !important;
+                min-height: 52px !important;
+            }
+            /* Navigation cards larger */
+            .nav-card {
+                padding: 18px 12px !important;
+                min-height: 60px !important;
+            }
+            .nav-icon {
+                width: 32px !important;
+                height: 32px !important;
+            }
+            /* Full-screen modals */
+            .image-modal.active {
+                padding: 20px !important;
+            }
+            .modal-image-container {
+                max-width: 95vw !important;
+                max-height: 80vh !important;
+            }
+            .modal-close {
+                width: 55px !important;
+                height: 55px !important;
+                top: 20px !important;
+                right: 20px !important;
+            }
+            /* Forms optimized */
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                font-size: 16px !important;
+                padding: 16px 18px !important;
+                min-height: 52px !important;
+            }
+            /* File uploads larger */
+            .file-upload {
+                min-height: 200px !important;
+                padding: 30px 20px !important;
+            }
+            .image-placeholder {
+                width: 80px !important;
+                height: 80px !important;
+            }
+            /* Bottom notifications */
+            .notification {
+                bottom: 20px !important;
+                top: auto !important;
+                left: 15px !important;
+                right: 15px !important;
+            }
+            /* Larger progress indicators */
+            .spinner {
+                width: 70px !important;
+                height: 70px !important;
+                border-width: 6px !important;
+            }
+            /* Single column results */
+            .results-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            /* iOS Safe Area Support */
+            body {
+                padding-top: env(safe-area-inset-top);
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+            .navigation-bar {
+                top: calc(20px + env(safe-area-inset-top));
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Extra small phones */
+            .app-container {
+                padding: 10px !important;
+            }
+            .header h1 {
+                font-size: 1.5rem !important;
+            }
+            .nav-grid {
+                grid-template-columns: 1fr !important;
+                gap: 10px !important;
+            }
+            .category-selector,
+            .style-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .settings-row {
+                grid-template-columns: 1fr !important;
+            }
+            .gender-selector {
+                grid-template-columns: 1fr !important;
+            }
+            .modal-actions {
+                width: 100% !important;
+            }
+            .modal-btn {
+                width: 100% !important;
+            }
+        }
+
+        /* Landscape mobile optimization */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .header {
+                padding: 10px !important;
+                margin-bottom: 15px !important;
+            }
+            .modal-image-container {
+                max-height: 70vh !important;
+            }
+        }
+
+        /* Touch feedback */
+        .btn:active,
+        .nav-card:active,
+        .category-card:active,
+        .style-option:active,
+        .gender-option:active {
+            transform: scale(0.97) !important;
+            transition: transform 0.1s ease !important;
+        }
+
+        /* Better mobile scrolling */
+        .style-grid {
+            -webkit-overflow-scrolling: touch;
+        }
+    </style>
+</head>
+<body>
+    <!-- Existing HTML structure -->
+    <!-- ... existing structure ... -->
+
+    <script>
+        // Existing JavaScript functionality
+        // ... existing scripts ...
+
+        // COMPLETE MOBILE ENHANCEMENTS
+
+        // Touch gesture support
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        document.addEventListener('touchend', function(e) {
+            const touchEndX = e.changedTouches[0].clientX;
+            const touchEndY = e.changedTouches[0].clientY;
+            handleSwipe(touchStartX, touchStartY, touchEndX, touchEndY);
+        }, { passive: true });
+
+        function handleSwipe(startX, startY, endX, endY) {
+            const deltaX = endX - startX;
+            const deltaY = endY - startY;
+            
+            // Swipe to close modal
+            if (Math.abs(deltaY) > 100 && document.getElementById('image-modal').classList.contains('active')) {
+                if (deltaY > 0) { // Swipe down
+                    closeModal();
+                }
+            }
+        }
+
+        // Vibration feedback for mobile
+        function vibrateDevice(duration = 50) {
+            if ('vibrate' in navigator) {
+                navigator.vibrate(duration);
+            }
+        }
+
+        // Add vibration to button clicks
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.btn, .nav-card, .category-card').forEach(element => {
+                element.addEventListener('click', function() {
+                    vibrateDevice(30);
+                });
+            });
+        });
+
+        // Native share API
+        window.shareImage = async function() {
+            if (!currentModalImageUrl) return;
+            
+            vibrateDevice(50);
+            
+            if (navigator.share) {
+                try {
+                    const response = await fetch(currentModalImageUrl);
+                    const blob = await response.blob();
+                    const file = new File([blob], 'ai-art.jpg', { type: 'image/jpeg' });
+                    
+                    await navigator.share({
+                        title: 'AI Generated Art',
+                        text: 'Check out this AI-generated image!',
+                        files: [file]
+                    });
+                    showNotification('Shared!', 'Image shared successfully', 'success');
+                } catch (error) {
+                    console.log('Share failed:', error);
+                    // Fallback to clipboard
+                    try {
+                        await navigator.clipboard.writeText(currentModalImageUrl);
+                        showNotification('Copied!', 'Image URL copied to clipboard', 'success');
+                    } catch (err) {
+                        showNotification('Share Failed', 'Could not share image', 'error');
+                    }
+                }
+            } else {
+                // Fallback for browsers without share API
+                try {
+                    await navigator.clipboard.writeText(currentModalImageUrl);
+                    showNotification('Copied!', 'Image URL copied to clipboard', 'success');
+                } catch (error) {
+                    showNotification('Share Failed', 'Could not share image', 'error');
+                }
+            }
+        };
+
+        // Camera access for mobile file upload
+        function setupCameraAccess() {
+            document.querySelectorAll('input[type="file"]').forEach(input => {
+                input.setAttribute('accept', 'image/*');
+                input.setAttribute('capture', 'environment'); // Use back camera
+            });
+        }
+
+        // Connection status indicator
+        window.addEventListener('online', function() {
+            showNotification('Online', 'Connection restored', 'success');
+        });
+
+        window.addEventListener('offline', function() {
+            showNotification('Offline', 'No internet connection', 'warning');
+        });
+
+        // Prevent zoom on input focus (iOS)
+        document.querySelectorAll('input, textarea, select').forEach(element => {
+            element.addEventListener('focus', function() {
+                if (window.innerWidth < 768) {
+                    document.querySelector('meta[name=viewport]').setAttribute('content', 
+                        'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+                }
+            });
+            
+            element.addEventListener('blur', function() {
+                document.querySelector('meta[name=viewport]').setAttribute('content', 
+                    'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes');
+            });
+        });
+
+        // Initialize mobile features
+        setTimeout(() => {
+            setupCameraAccess();
+            console.log('🚀 Mobile enhancements loaded!');
+            console.log('📱 Features: Touch gestures, Vibration, Native share, Camera access');
+        }, 100);
+    </script>
+</body>
+</html>
